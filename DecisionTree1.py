@@ -38,7 +38,92 @@ y = train_data2["class"]
 print("Y: \n", y.head())
 
 #Criterion: The function to measure the quality of a split. Supported criteria are “gini” for the Gini impurity and “entropy” for the information gain.
+#Minimum Records per Leaf Node = 10
 classifier = tree.DecisionTreeClassifier(criterion='entropy', min_samples_leaf = 10)
+classifier = classifier.fit(X,y)
+print("Classifier: \n", classifier)
+
+tFeatures = list(test_data2.columns[:6])
+print("Features: \n", tFeatures)
+
+testFeatures = test_data2[tFeatures]
+print("Test Features: \n", testFeatures.head())
+
+testPrediction = classifier.predict(testFeatures)
+print("Test Prediction: \n", testPrediction)
+
+testActual = list(test_data2["class"])
+print("Test Actual: \n", testActual)
+
+print("Accuracy: %.3f" %accuracy_score(testActual, testPrediction))
+print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
+print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+
+#Minimum Records per Leaf Node = 5
+classifier = tree.DecisionTreeClassifier(criterion='entropy', min_samples_leaf = 5)
+classifier = classifier.fit(X,y)
+print("Classifier: \n", classifier)
+
+tFeatures = list(test_data2.columns[:6])
+print("Features: \n", tFeatures)
+
+testFeatures = test_data2[tFeatures]
+print("Test Features: \n", testFeatures.head())
+
+testPrediction = classifier.predict(testFeatures)
+print("Test Prediction: \n", testPrediction)
+
+testActual = list(test_data2["class"])
+print("Test Actual: \n", testActual)
+
+print("Accuracy: %.3f" %accuracy_score(testActual, testPrediction))
+print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
+print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+
+#Minimum Records per Leaf Node = 15
+classifier = tree.DecisionTreeClassifier(criterion='entropy', min_samples_leaf = 15)
+classifier = classifier.fit(X,y)
+print("Classifier: \n", classifier)
+
+tFeatures = list(test_data2.columns[:6])
+print("Features: \n", tFeatures)
+
+testFeatures = test_data2[tFeatures]
+print("Test Features: \n", testFeatures.head())
+
+testPrediction = classifier.predict(testFeatures)
+print("Test Prediction: \n", testPrediction)
+
+testActual = list(test_data2["class"])
+print("Test Actual: \n", testActual)
+
+print("Accuracy: %.3f" %accuracy_score(testActual, testPrediction))
+print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
+print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+
+#Minimum Records per Leaf Node = 20
+classifier = tree.DecisionTreeClassifier(criterion='entropy', min_samples_leaf = 20)
+classifier = classifier.fit(X,y)
+print("Classifier: \n", classifier)
+
+tFeatures = list(test_data2.columns[:6])
+print("Features: \n", tFeatures)
+
+testFeatures = test_data2[tFeatures]
+print("Test Features: \n", testFeatures.head())
+
+testPrediction = classifier.predict(testFeatures)
+print("Test Prediction: \n", testPrediction)
+
+testActual = list(test_data2["class"])
+print("Test Actual: \n", testActual)
+
+print("Accuracy: %.3f" %accuracy_score(testActual, testPrediction))
+print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
+print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+
+#Minimum Records per Leaf Node = 25
+classifier = tree.DecisionTreeClassifier(criterion='entropy', min_samples_leaf = 25)
 classifier = classifier.fit(X,y)
 print("Classifier: \n", classifier)
 
@@ -61,16 +146,7 @@ print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
 confusionMatrix = confusion_matrix(testActual, testPrediction)
 print("Confusion Matrix: \n", confusionMatrix)
 
-#plt.figure()
-#plt.matshow(confusionMatrix)
-#plt.title('Confusion Matrix')
-#plt.colorbar()
-#plt.ylabel('True Label')
-#plt.xlabel('Predicted Label')  
-#plt.show()
-
-#tree.export_graphviz(classifier, out_file='tree.dot')   
-
+#Minimum Records per Leaf Node = 25
 import graphviz 
 dot_data = tree.export_graphviz(classifier, out_file=None, feature_names=tFeatures, filled=True, rounded=True, special_characters=True)
 graph = graphviz.Source(dot_data) 
