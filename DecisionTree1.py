@@ -67,7 +67,7 @@ print("Test Features: \n", testFeatures.head())
 testPrediction = classifier.predict(testFeatures)
 print("Test Prediction: \n", testPrediction)
 
-#For measuring the parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
+#For measuring parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
 #Get the Actual class of the Testing data
 testActual = list(test_data2["class"])
 print("Test Actual: \n", testActual)
@@ -76,8 +76,12 @@ print("Test Actual: \n", testActual)
 #Accuracy is measured for the entire classifier, while Precision and Recall are computed for each class
 print("Accuracy of the Classifier: %.2f" %(100*accuracy_score(testActual, testPrediction)),"%")
 
-print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
-print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+#Here we calculate the Precision and Recall for the positive class - "Normal"
+#pos_label: The class to report if average='binary' and the data is binary. 
+#If the data are multiclass or multilabel, this will be ignored; setting labels=[pos_label] and average != 'binary' will report scores for that label only.
+#Here the class is binary. Hence, we provide pos_label = 'Normal', average="binary" as the parameters to calculate Precision and Recall
+print("Precision value of the Positive Class ('Normal' Class): %.2f" %(100*precision_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
+print("Recall value of the Positive Class ('Normal' Class): %.2f" %(100*recall_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
 
 #Creating a Confusion Matrix for the Actual Vs Prediction
 confusionMatrix = confusion_matrix(testActual, testPrediction)
@@ -107,7 +111,7 @@ print("Test Features: \n", testFeatures.head())
 testPrediction = classifier.predict(testFeatures)
 print("Test Prediction: \n", testPrediction)
 
-#For measuring the parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
+#For measuring parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
 #Get the Actual class of the Testing data
 testActual = list(test_data2["class"])
 print("Test Actual: \n", testActual)
@@ -116,8 +120,12 @@ print("Test Actual: \n", testActual)
 #Accuracy is measured for the entire classifier, while Precision and Recall are computed for each class
 print("Accuracy of the Classifier: %.2f" %(100*accuracy_score(testActual, testPrediction)),"%")
 
-print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
-print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+#Here we calculate the Precision and Recall for the positive class - "Normal"
+#pos_label: The class to report if average='binary' and the data is binary. 
+#If the data are multiclass or multilabel, this will be ignored; setting labels=[pos_label] and average != 'binary' will report scores for that label only.
+#Here the class is binary. Hence, we provide pos_label = 'Normal', average="binary" as the parameters to calculate Precision and Recall
+print("Precision value of the Positive Class ('Normal' Class): %.2f" %(100*precision_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
+print("Recall value of the Positive Class ('Normal' Class): %.2f" %(100*recall_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
 
 #Creating a Confusion Matrix for the Actual Vs Prediction
 confusionMatrix = confusion_matrix(testActual, testPrediction)
@@ -147,7 +155,7 @@ print("Test Features: \n", testFeatures.head())
 testPrediction = classifier.predict(testFeatures)
 print("Test Prediction: \n", testPrediction)
 
-#For measuring the parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
+#For measuring parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
 #Get the Actual class of the Testing data
 testActual = list(test_data2["class"])
 print("Test Actual: \n", testActual)
@@ -156,8 +164,12 @@ print("Test Actual: \n", testActual)
 #Accuracy is measured for the entire classifier, while Precision and Recall are computed for each class
 print("Accuracy of the Classifier: %.2f" %(100*accuracy_score(testActual, testPrediction)),"%")
 
-print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
-print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+#Here we calculate the Precision and Recall for the positive class - "Normal"
+#pos_label: The class to report if average='binary' and the data is binary. 
+#If the data are multiclass or multilabel, this will be ignored; setting labels=[pos_label] and average != 'binary' will report scores for that label only.
+#Here the class is binary. Hence, we provide pos_label = 'Normal', average="binary" as the parameters to calculate Precision and Recall
+print("Precision value of the Positive Class ('Normal' Class): %.2f" %(100*precision_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
+print("Recall value of the Positive Class ('Normal' Class): %.2f" %(100*recall_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
 
 #Creating a Confusion Matrix for the Actual Vs Prediction
 confusionMatrix = confusion_matrix(testActual, testPrediction)
@@ -187,7 +199,7 @@ print("Test Features: \n", testFeatures.head())
 testPrediction = classifier.predict(testFeatures)
 print("Test Prediction: \n", testPrediction)
 
-#For measuring the parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
+#For measuring parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
 #Get the Actual class of the Testing data
 testActual = list(test_data2["class"])
 print("Test Actual: \n", testActual)
@@ -196,8 +208,12 @@ print("Test Actual: \n", testActual)
 #Accuracy is measured for the entire classifier, while Precision and Recall are computed for each class
 print("Accuracy of the Classifier: %.2f" %(100*accuracy_score(testActual, testPrediction)), "%")
 
-print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
-print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+#Here we calculate the Precision and Recall for the positive class - "Normal"
+#pos_label: The class to report if average='binary' and the data is binary. 
+#If the data are multiclass or multilabel, this will be ignored; setting labels=[pos_label] and average != 'binary' will report scores for that label only.
+#Here the class is binary. Hence, we provide pos_label = 'Normal', average="binary" as the parameters to calculate Precision and Recall
+print("Precision value of the Positive Class ('Normal' Class): %.2f" %(100*precision_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
+print("Recall value of the Positive Class ('Normal' Class): %.2f" %(100*recall_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
 
 #Creating a Confusion Matrix for the Actual Vs Prediction
 confusionMatrix = confusion_matrix(testActual, testPrediction)
@@ -227,7 +243,7 @@ print("Test Features: \n", testFeatures.head())
 testPrediction = classifier.predict(testFeatures)
 print("Test Prediction: \n", testPrediction)
 
-#For measuring the parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
+#For measuring parameters like Accuracy, Recall and Precision, compare this Predicted class with the Actul class of the Testing data
 #Get the Actual class of the Testing data
 testActual = list(test_data2["class"])
 print("Test Actual: \n", testActual)
@@ -236,8 +252,12 @@ print("Test Actual: \n", testActual)
 #Accuracy is measured for the entire classifier, while Precision and Recall are computed for each class
 print("Accuracy of the Classifier: %.2f" %(100*accuracy_score(testActual, testPrediction)), "%")
 
-print("Precision: %.3f" %precision_score(testActual, testPrediction, average="macro"))
-print("Recall: %.3f" %recall_score(testActual, testPrediction, average="macro"))
+#Here we calculate the Precision and Recall for the positive class - "Normal"
+#pos_label: The class to report if average='binary' and the data is binary. 
+#If the data are multiclass or multilabel, this will be ignored; setting labels=[pos_label] and average != 'binary' will report scores for that label only.
+#Here the class is binary. Hence, we provide pos_label = 'Normal', average="binary" as the parameters to calculate Precision and Recall
+print("Precision value of the Positive Class ('Normal' Class): %.2f" %(100*precision_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
+print("Recall value of the Positive Class ('Normal' Class): %.2f" %(100*recall_score(testActual, testPrediction, pos_label = 'Normal', average="binary")), "%")
 
 #Creating a Confusion Matrix for the Actual Vs Prediction
 confusionMatrix = confusion_matrix(testActual, testPrediction)
@@ -252,12 +272,23 @@ graph.render("DecisionTreeViz")
 
 #Visualizing the Confusion Matrix using the seaborn package
 import seaborn as sns
-ax= plt.subplot()
+fig, ax= plt.subplots(figsize=(8,6))
+
+#When you set xticklabels=True, yticklabels=True in the Heatmap function, it automatically provides the labels for Confusion matrix with 0s, 1s and 2s in the Ascending order of the Class labels  
+#Use this to find out the labels of the Confusion Matrix:
+#sns.heatmap(confusionMatrix, annot=True, linewidths=.5, xticklabels=True, yticklabels=True);
+
+#After you find out the labels in the Confusion Matrix, remove the xticklabels & yticklabels parameters. Set the labels manually now
 #annot=True to annotate cells - This provides labels(numbers) in the Confusion Matrix
-sns.heatmap(confusionMatrix, annot=True, ax = ax);
+
+sns.heatmap(confusionMatrix, annot=True, linewidths=.5);
+ax.xaxis.set_ticklabels(['Abnormal', 'Normal'], fontsize=12); ax.yaxis.set_ticklabels(['Normal', 'Abnormal'], fontsize=12);
+
 #Setting the labels, title and tick marks
-ax.set_xlabel('Predicted labels');ax.set_ylabel('True labels'); 
-ax.set_title('Confusion Matrix'); 
-ax.xaxis.set_ticklabels(['Abnormal', 'Normal']); ax.yaxis.set_ticklabels(['Normal', 'Abnormal']);
+#Usually in the Confusion Matrix, the Y-Axis represents the True Values and X-Axis represents the Predicted Values
+ax.set_title('Confusion Matrix', fontsize=20);
+ax.set_xlabel('Predicted Labels', fontsize=14);
+ax.set_ylabel('True Labels', fontsize=14); 
+
 ax.plot()
 plt.show()
